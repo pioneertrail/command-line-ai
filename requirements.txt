@@ -1,0 +1,6 @@
+openai==1.66.3
+python-dotenv==1.0.1
+requests==2.32.3
+colorama==0.4.6
+pytest==8.3.5
+pytest-mock==3.12.0 

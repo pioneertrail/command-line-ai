@@ -34,20 +34,9 @@ ENV/
 # Environment variables
 .env
 
-# Testing
-.coverage
-htmlcov/
-.pytest_cache/
-.tox/
-
-# Distribution
+# Logs
 *.log
-*.pot
-*.pyc
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
 
-# OS
+# System files
 .DS_Store
 Thumbs.db 

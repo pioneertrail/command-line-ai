@@ -1,16 +1,17 @@
 # Grok CLI Agent
 
-A colorful command-line interface for interacting with the Grok API. This agent provides a user-friendly way to chat with Grok, manage models, and utilize various API features.
+A powerful command-line interface agent powered by the Grok API, designed to help users execute system commands and perform web searches efficiently.
 
 ## Features
 
-- 🌈 Colorful interface with rainbow text responses
-- 🤖 Interactive chat with Grok AI
-- 📊 Real-time token usage tracking
-- 🔄 Model switching and information display
-- 🔑 API key management and status display
-- 🛠️ Built-in tool support (weather, web search)
-- 🎨 Support for both text and image modalities
+- 🤖 Natural language command processing
+- 🔒 Secure command execution with safety checks
+- 🌐 Web search capabilities using DuckDuckGo
+- 💻 System information and monitoring
+- 🔑 Admin privilege management
+- 📝 Command history and session management
+- ⚙️ Configurable settings
+- 📊 Token usage tracking and cost monitoring
 
 ## Installation
 
@@ -20,73 +21,99 @@ git clone https://github.com/yourusername/grok-cli-agent.git
 cd grok-cli-agent
 ```
 
-2. Create a virtual environment and install dependencies:
+2. Create and activate a virtual environment:
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
 ```
 
-3. Create a `.env` file with your Grok API key:
+3. Install dependencies:
+```bash
+pip install -r requirements_simple.txt
 ```
-GROK_API_KEY=your-api-key-here
+
+4. Create a `.env` file in the project root and add your Grok API key:
+```
+GROK_API_KEY=your_api_key_here
 ```
 
 ## Usage
 
 Run the agent:
 ```bash
-python grok_agent.py
+python grok_agent_simple_v2.py
 ```
 
 ### Available Commands
 
-- `/model <model_id>` - Switch to a different model
-- `/info` - Display information about the current model
-- `/key` - Display information about your API key
-- `/tokens <text>` - Show how a text would be tokenized
+#### System Commands
+- `ipconfig` - Display network configuration
+- `ping` - Test network connectivity
+- `tracert` - Trace network routes
+- `netstat` - Show network statistics
+- `systeminfo` - Display system information
+- `ver` - Show Windows version
+- `hostname` - Display computer name
+- `whoami` - Show current user
+- `dir` - List directory contents
+- `type` - Display file contents
+- `echo` - Output text
+- `date` - Show current date
+- `time` - Show current time
+
+#### Special Commands
+- `/help` - Show help information
 - `/exit` - Exit the program
+- `/model <model_id>` - Switch models
+- `/info` - Show model information
+- `/key` - Show API key info
+- `/tokens <text>` - Show token breakdown
+- `/usage` - Show usage statistics
+- `/exec <command>` - Execute a system command
+- `/request admin` - Request admin privileges
+- `/history` - Show command history
+- `/config` - Show configuration
+- `/clear history` - Clear command history
 
-### Chat Example
+## Security Features
 
-```
-> Tell me a joke
+- Command validation and safety checks
+- Admin privilege management
+- Secure API key handling
+- Logging and error tracking
+- Safe command execution with path validation
 
-🤔 Consulting Grok...
+## Configuration
 
-Grok: Why don't programmers like nature? It has too many bugs!
+The agent can be configured through the following methods:
+- Environment variables
+- Configuration file
+- Command-line arguments
 
-Token Usage:
-  • Input Tokens: 4
-  • Output Tokens: 12
-  • Cache Creation: 0
-  • Cache Read: 0
-```
+## Dependencies
 
-## Development
-
-### Running Tests
-
-```bash
-pytest test_grok_agent.py -v
-```
-
-### Project Structure
-
-- `grok_agent.py` - Main agent implementation
-- `test_grok_agent.py` - Test suite
-- `requirements.txt` - Project dependencies
-- `.env` - API key configuration
-- `pytest.ini` - Test configuration
+- openai>=1.0.0
+- python-dotenv>=1.0.0
+- rich>=13.0.0
+- tiktoken>=0.5.0
+- requests>=2.31.0
+- beautifulsoup4>=4.12.0
+- pywin32>=306 (Windows only)
 
 ## Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
 
-MIT License - See LICENSE file for details 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Grok API for providing the underlying AI capabilities
+- OpenAI for the API client implementation
+- Rich library for beautiful terminal output 
